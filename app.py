@@ -2,14 +2,17 @@ import streamlit as st
 from PIL import Image
 import numpy as np
 from keras.models import load_model
+from PIL import ImageOps
+
 
 # Load the trained model
-model = load_model('test5.h5')
+model = load_model('labeled.h5')
 
-# Define the labels for predictions
-labels = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
-          'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
-          'W', 'X', 'Y', 'Z', 'del', 'nothing', 'space']
+labels = [
+    'R', 'U', 'I', 'N', 'G', 'Z', 'T', 'S', 'A', 'F', 'O', 'H', 
+    'Blank', 'M', 'J', 'C', 'D', 'V', 'Q', 'X', 'E', 'B', 'K', 'L', 
+    'Y', 'P', 'W'
+]
 
 # Streamlit app title
 st.title("ASL Alphabet Predictor")
@@ -23,9 +26,6 @@ picture = st.camera_input("Take a picture", disabled=not enable_camera)
 
 # File upload input
 uploaded_file = st.file_uploader("Upload a JPEG image", type=["jpg", "jpeg"])
-
-# Function to preprocess image
-from PIL import ImageOps
 
 # Function to preprocess image with flipping
 def preprocess_image(image, flip=False):
