@@ -4,7 +4,7 @@ import numpy as np
 from keras.models import load_model
 
 # Load the trained model
-model = load_model('atest.h5')
+model = load_model('test5.h5')
 
 # Define the labels for predictions
 labels = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
@@ -25,10 +25,16 @@ picture = st.camera_input("Take a picture", disabled=not enable_camera)
 uploaded_file = st.file_uploader("Upload a JPEG image", type=["jpg", "jpeg"])
 
 # Function to preprocess image
-def preprocess_image(image):
+from PIL import ImageOps
+
+# Function to preprocess image with flipping
+def preprocess_image(image, flip=False):
     # Convert image to RGB if it's not already
     if image.mode != "RGB":
         image = image.convert("RGB")
+    # Optionally flip the image horizontally
+    if flip:
+        image = ImageOps.mirror(image)
     # Resize the image to the input shape of the model
     image = image.resize((32, 32))
     # Convert the image to a NumPy array
@@ -47,8 +53,8 @@ if picture:
     # Display the picture
     st.image(image, caption="Captured Image", width=250)
 
-    # Preprocess the image
-    img_array = preprocess_image(image)
+    # Preprocess the image with flipping enabled
+    img_array = preprocess_image(image, flip=True)
 
     # Make predictions
     predictions = model.predict(img_array)
@@ -59,6 +65,7 @@ if picture:
 
     # Display the prediction
     st.write(f"### Predicted Class: {predicted_label}")
+
 
 # Process uploaded JPEG file
 if uploaded_file:
