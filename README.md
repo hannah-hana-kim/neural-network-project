@@ -1,6 +1,5 @@
 # Neural Network Final Project: ASL Alphabet Recognition (using CNN and ResNet)
-
-author: Kendall Gilbert, Hannah Kim
+Authors: Kendall Gilbert, Hannah Kim
 
 ## How to run the CNN model with Augmented Data
 run
