@@ -9,7 +9,7 @@ run
 
 on the terminal under the root directory
 
-## How to run the ResNet model wi
+## How to run the ResNet model with Augmented Data
 
 - go to app.py file
 - change the model path to __'./models/resnet_model.h5'__
