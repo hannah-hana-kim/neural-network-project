@@ -1,12 +1,13 @@
 # Neural Network Final Project: ASL Alphabet Recognition (using CNN and ResNet)
 Authors: Kendall Gilbert, Hannah Kim
 
-Models:
+What is Included in Repo:
 - CNN Model: main_cnn.ipynb
 - ResNet Model: resnet.ipynb
 - First CNN Model attempted using old data: firstmodel.ipynb
 - Saved Model Folder: Models
 - Streamlit Application: app.py
+- Report: 6600_Final_Report.pdf
 
 ## How to run the CNN model with Augmented Data
 run
