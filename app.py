@@ -6,7 +6,7 @@ from PIL import ImageOps
 
 
 # Load the trained model
-model = load_model('labeled.h5')
+model = load_model('labeled2.h5')
 
 labels = [
     'R', 'U', 'I', 'N', 'G', 'Z', 'T', 'S', 'A', 'F', 'O', 'H', 
