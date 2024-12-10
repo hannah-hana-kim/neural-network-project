@@ -5,7 +5,7 @@ from keras.models import load_model
 from PIL import ImageOps
 
 # Load the trained model
-model = load_model('labeled.h5')
+model = load_model('./models/cnn_model.h5')
 
 labels = [
     'R', 'U', 'I', 'N', 'G', 'Z', 'T', 'S', 'A', 'F', 'O', 'H', 
