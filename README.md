@@ -7,7 +7,7 @@ What is Included in Repo:
 - First CNN Model attempted using old data: firstmodel.ipynb
 - Saved Model Folder: Models
 - Streamlit Application: app.py
-- Report: 6600_Final_Report.pdf
+- Report: 6600 Final Project Report.pdf
 
 ## How to run the CNN model with Augmented Data
 run
